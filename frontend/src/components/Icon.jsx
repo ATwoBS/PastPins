@@ -1,12 +1,12 @@
 import L from 'leaflet';
 
-import markerPerson from '../assets/marker-icon-2x.png';
+import redIcon from '../assets/red-icon.png';
 
 const customIcon = new L.Icon({
-    iconUrl: markerPerson,
-    iconRetinaUrl: markerPerson,
+    iconUrl: redIcon,
+    iconRetinaUrl: redIcon,
     iconAnchor: null,
-    popupAnchor: null,
+    popupAnchor: [0, -32], 
     shadowUrl: null,
     shadowSize: null,
     shadowAnchor: null,

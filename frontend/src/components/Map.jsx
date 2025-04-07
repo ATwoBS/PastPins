@@ -4,7 +4,7 @@ import "leaflet/dist/leaflet.css";
 import { AppContext } from "./AppContext";
 import { customIcon } from "./Icon";
 
-const centerPosition = [18.519586, 73.855351];
+const centerPosition = [18.5204, 73.8567];
 
 const FlyToLocation = ({ position }) => {
   const map = useMap();
@@ -100,7 +100,7 @@ export default function Map() {
 
       <MapContainer
         center={centerPosition}
-        zoom={25}
+        zoom={15}
         style={{ height: "100vh", width: "70vw" }}
       >
         <TileLayer
@@ -128,17 +128,17 @@ export default function Map() {
                   <img
                     src={posi.image}
                     alt={posi.name}
-                    className="border-2 border-[#7d7265]"
+                    className="border-3 border-[#7d7265] popup-image"
                     style={{
-                      width: "200px",
+                      width: "2000px",
                       height: "auto",
                       borderRadius: "8px",
                     }}
                   />
-                  <h2 className="text-center text-xl">{posi.name}</h2>
+                  <h2 className="text-justify text-xl">{posi.name}</h2>
                 </div>
               ) : (
-                <h4 className="text-xl text-center">{posi.name}</h4>
+                <h4 className="text-xl text-justify">{posi.name}</h4>
               )}
               <br />
             </Popup>

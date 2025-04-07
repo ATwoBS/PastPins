@@ -10,3 +10,7 @@ body {
   background: transparent;
   border: none;
 }
+
+.popup-image {
+  object-position: center;
+}
