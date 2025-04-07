@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+body {
+  background-color: #fffff4;
+  color: #7d7265;
+  font-family: 'MedievalSharp', cursive;
+}
+
+.leaflet-div-icon {
+  background: transparent;
+  border: none;
+}
