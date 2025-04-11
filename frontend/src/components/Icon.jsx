@@ -1,10 +1,10 @@
 import L from 'leaflet';
 
-import redIcon from '../assets/red-icon.png';
+import pin from '../assets/heroicon-pin.svg';
 
 const customIcon = new L.Icon({
-    iconUrl: redIcon,
-    iconRetinaUrl: redIcon,
+    iconUrl: pin,
+    iconRetinaUrl: pin,
     iconAnchor: null,
     popupAnchor: [0, -32], 
     shadowUrl: null,

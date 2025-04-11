@@ -10,7 +10,7 @@ const FlyToLocation = ({ position }) => {
   const map = useMap();
   useEffect(() => {
     if (position) {
-      map.flyTo(position, 18);
+      map.flyTo(position, 16);
     }
   }, [position, map]);
   return null;
@@ -26,7 +26,9 @@ export default function Map() {
   useEffect(() => {
     const fetchLocations = async () => {
       try {
+        console.time('Time taken to fetch data: ')
         const res = await fetch("https://pastpins.onrender.com/");
+        console.timeEnd('Time taken to fetch data: ')
         const data = await res.json();
         setLocations(data.locations);
         console.log("Fetched data");
@@ -100,7 +102,7 @@ export default function Map() {
 
       <MapContainer
         center={centerPosition}
-        zoom={15}
+        zoom={13}
         style={{ height: "100vh", width: "70vw" }}
       >
         <TileLayer
@@ -128,17 +130,18 @@ export default function Map() {
                   <img
                     src={posi.image}
                     alt={posi.name}
-                    className="border-3 border-[#7d7265] popup-image"
+                    className="block mx-auto border-3 border-[#7d7265] max-h-[200px] max-w-[800px]"
                     style={{
-                      width: "2000px",
+                      width: "100%",
                       height: "auto",
                       borderRadius: "8px",
                     }}
                   />
-                  <h2 className="text-justify text-xl">{posi.name}</h2>
+                  <br />
+                  <h2 className="text-center text-[20px] -mb-5 -mt-2">{posi.name}</h2>
                 </div>
               ) : (
-                <h4 className="text-xl text-justify">{posi.name}</h4>
+                <h4 className="text-[20px] text-center -mb-5 -mt-5">{posi.name}</h4>
               )}
               <br />
             </Popup>

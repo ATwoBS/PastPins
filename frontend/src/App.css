@@ -3,14 +3,10 @@
 body {
   background-color: #fffff4;
   color: #7d7265;
-  font-family: 'MedievalSharp', cursive;
+  font-family: 'Lato';
 }
 
 .leaflet-div-icon {
   background: transparent;
   border: none;
-}
-
-.popup-image {
-  object-position: center;
 }
