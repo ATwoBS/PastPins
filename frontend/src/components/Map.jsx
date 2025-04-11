@@ -31,7 +31,7 @@ export default function Map() {
         console.timeEnd('Time taken to fetch data: ')
         const data = await res.json();
         setLocations(data.locations);
-        console.log("Fetched data");
+        console.log("Locations set");
       } catch (error) {
         console.error("Error fetching locations:", error);
       }
