@@ -5,7 +5,7 @@ export default function InfoPanel() {
   const { selectedLocation } = useContext(AppContext);
 
   return (
-    <div className="w-[30vw] p-4 bg-fffff4 shadow-lg h-screen overflow-y-auto">
+    <div className="w-full md:w-[30vw] p-4 bg-[#fffff4] shadow-lg h-[40vh] md:h-screen overflow-y-auto">
       {selectedLocation ? (
         <>
           <h2 className="text-xl text-center text-[#564947] font-bold">{selectedLocation.name}</h2>

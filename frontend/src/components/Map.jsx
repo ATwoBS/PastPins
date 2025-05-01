@@ -63,7 +63,7 @@ export default function Map() {
   };
 
   return (
-    <div style={{ width: "70vw", height: "100vh", position: "relative" }}>
+    <div className="w-full h-full relative">
       {loading && (
         <div className="loading-screen">
           <div className="pin"></div>
@@ -130,8 +130,8 @@ export default function Map() {
           <MapContainer
             center={centerPosition}
             zoom={13}
-            style={{ height: "100vh", width: "70vw" }}
-          >
+            className="h-full w-full"
+            >
             <TileLayer
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
