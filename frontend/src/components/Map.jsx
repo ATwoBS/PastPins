@@ -2,7 +2,9 @@ import React, { useContext, useState, useEffect } from "react";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import { AppContext } from "./AppContext";
-import { customIcon } from "./Icon"; 
+import { customIcon } from "./Icon";
+
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:5000"
 
 const centerPosition = [18.5204, 73.8567];
 
@@ -28,7 +30,7 @@ export default function Map() {
     const fetchLocations = async () => {
       try {
         console.time("Time taken to fetch data: ");
-        const res = await fetch("https://pastpins.onrender.com/");
+        const res = await fetch(`${BACKEND_URL}`);
         console.timeEnd("Time taken to fetch data: ");
         const data = await res.json();
         setLocations(data.locations);
