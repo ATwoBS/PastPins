@@ -28,7 +28,7 @@ export default function Map() {
     const fetchLocations = async () => {
       try {
         console.time("Time taken to fetch data: ");
-        const res = await fetch("https://pastpins.onrender.com/");
+        const res = await fetch(import.meta.env.VITE_BACKEND_URL);
         console.timeEnd("Time taken to fetch data: ");
         const data = await res.json();
         setLocations(data.locations);

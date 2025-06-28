@@ -6,11 +6,31 @@ const mongoose = require("mongoose");
 
 const app = express();
 
-const corsOptions = {
-    origin: "*"
-};
+function getCorsOptions() {
+  const isProd = process.env.NODE_ENV === 'production';
+  const isDev = process.env.NODE_ENV === 'development';
 
-app.use(cors(corsOptions));
+  if (isProd) {
+    return {
+      origin: ['https://atwobs.github.io'],
+      credentials: true
+    };
+  }
+
+  if (isDev) {
+    return {
+      origin: '*',
+      credentials: true
+    };
+  }
+
+  // Optional fallback for other environments
+  return {
+    origin: false // block all by default
+  };
+}
+
+app.use(cors(getCorsOptions()));
 app.use(express.json());
 
 const mongoURI = process.env.MONGO_URI;
